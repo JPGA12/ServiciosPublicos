@@ -1,29 +1,29 @@
 #include <stdio.h>
+#include <math.h>
 
 void calcularConsumoAgua(int cosumoLitros){
     int consumo;
-    int adicional;
+    double adicional;
     int adicionales;
-    int costoLitro;
+    int costoLitro = 150;
     consumo = cosumoLitros - 100;
-    if (consumo>0){
-
-        adicional = consumo / 50;
-        if(consumo%50>0){
-            adicional = adicional+1;
-        }
-        printf("Uno");
-        puts(adicional);
-
-
-//        round(adicional);
-//        adicionales = round(adicional);
-        puts(adicionales);
-        for (int i = 0; i < adicionales; i++){
-        
-        }
+    adicional = consumo / 50;
+    // printf("%0.2f", adicional);
+    // double redondeado = round(adicional);
+    // printf("%0.2f", round(adicional));
+    adicionales = (int) adicional;
+    if(consumo%50>0){
+        adicional = adicional+1;
     }
-    
+    adicionales = (int) adicional;
+    printf("%.f", adicional);
+    printf("%i", adicionales);
+
+    for (int i = 0; i < adicionales; i++){
+        costoLitro = costoLitro + 25;
+    }
+
+    printf("%i", costoLitro);
     
     
 }
