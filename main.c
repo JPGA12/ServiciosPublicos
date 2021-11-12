@@ -7,9 +7,17 @@ void calcularConsumoAgua(int cosumoLitros){
     int costoLitro;
     consumo = cosumoLitros - 100;
     if (consumo>0){
+
         adicional = consumo / 50;
-        round(adicional);
-        adicionales = round(adicional);
+        if(consumo%50>0){
+            adicional = adicional+1;
+        }
+        printf("Uno");
+        puts(adicional);
+
+
+//        round(adicional);
+//        adicionales = round(adicional);
         puts(adicionales);
         for (int i = 0; i < adicionales; i++){
         
@@ -25,6 +33,7 @@ void facturaAgua(){
     puts("INGRESE EL COSUMO MENSUAL EN LITROS:");
     scanf("%i", &consumoLitros);
     calcularConsumoAgua(consumoLitros);
+
 
 }
 
