@@ -1,38 +1,78 @@
 #include <stdio.h>
-#include <math.h>
 
-void calcularConsumoAgua(int cosumoLitros){
+
+void calcularConsumoAgua(int cosumoLitros, int zonaResidencia) {
+    int listrosBase = 100;
     int consumo;
     double adicional;
     int adicionales;
-    int costoLitro = 150;
-    consumo = cosumoLitros - 100;
-    adicional = consumo / 50;
-    // printf("%0.2f", adicional);
-    // double redondeado = round(adicional);
-    // printf("%0.2f", round(adicional));
+    int costoLitroBase = 150;
+    int adiconalLitros = 50;
+    int costolitroAdcional = 25;
+    int sumaCosto;
+    int costolitro;
+    int costoTotal;
+
+
+
+    consumo = cosumoLitros - listrosBase;
+    adicional = consumo / adiconalLitros;
+
+
     adicionales = (int) adicional;
-    if(consumo%50>0){
-        adicional = adicional+1;
+    if (consumo % adiconalLitros > 0) {
+        printf(" resultante: %d \n ", consumo % adiconalLitros);
+        adicional = adicional + 1;
     }
     adicionales = (int) adicional;
-    printf("%.f", adicional);
-    printf("%i", adicionales);
 
-    for (int i = 0; i < adicionales; i++){
-        costoLitro = costoLitro + 25;
+    printf("-------------------------------------------------\n");
+    printf("%i \n", listrosBase);
+    for (int i = 0; i < adicionales - 1; ++i) {
+        printf("%i \n", adiconalLitros);
     }
+    printf("%d \n ", consumo % adiconalLitros);
+    printf("-------------------------------------------------\n");
 
-    printf("%i", costoLitro);
-    
-    
+    //ADICIONAR 25
+
+    printf("Costo total  %i \n", listrosBase * costoLitroBase);
+
+    for (int i = 0; i < (adicionales); ++i) {
+        costolitro = costoLitroBase + (costolitroAdcional * i);
+
+        if (costolitro > 150) {
+
+            costoTotal = adiconalLitros * costolitro;
+            printf("Costo total: %i \n", costoTotal);
+            sumaCosto+=costoTotal;
+            printf("SUMA: %i\n",sumaCosto);
+
+        }
+
+    }
+    printf("SUMA: %i\n",sumaCosto);
+
+    printf("Costo total : %i \n", (consumo % adiconalLitros) * (costolitro + costolitroAdcional));
+    printf("-------------------------------------------------\n");
+
+
+    //OPERACIONES
+
+    printf("Costo total: \n |  %i |  %i  |  %i  \n", listrosBase, costoLitroBase, listrosBase * costoLitroBase);
+
+
 }
 
-void facturaAgua(){
+void facturaAgua() {
     int consumoLitros = 0;
+    int zonaResidencia = 0;
     puts("INGRESE EL COSUMO MENSUAL EN LITROS:");
     scanf("%i", &consumoLitros);
-    calcularConsumoAgua(consumoLitros);
+//    puts("INGRESE EL DIGITO DE LA ZONA DE SU RESIDENCIA: \n 1)Rural \n 2)Urbana \n 3)Industrial");
+//    scanf("%i",&zonaResidencia);
+
+    calcularConsumoAgua(consumoLitros, zonaResidencia);
 
 
 }
@@ -42,10 +82,10 @@ int main() {
     do {
         puts("EMPRESA DE SERVICIOS \n 1) FACTURAS AGUA \n 2) FACTURAS ELECTRICIDAD \n 3) SALIR");
         scanf("%i", &opc);
-        if(opc == 1){
+        if (opc == 1) {
             facturaAgua();
-        }else if(opc == 2){
+        } else if (opc == 2) {
         }
-    } while (opc!=3);
+    } while (opc != 3);
     return 0;
 }
