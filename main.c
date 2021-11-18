@@ -12,11 +12,10 @@ void calcularConsumoAgua(int consumoLitros, int zonaResidencia) {
     consumo = consumoLitros - 100;
     adicional = consumo / 50;
 
-
     if (consumo % 50 > 0) {
         adicional++;
-
     }
+
     if (consumoLitros <= 100) {
         costoTotal = consumoLitros * 150;
         printf("%d  |  150  |  %d\n", consumoLitros, costoTotal);
@@ -127,7 +126,6 @@ void calcularConusmoLuz(int consumoKW, int zonaResidencia) {
         printf("------------------------------------------\n");
         printf("Total a pagar: %d \n ", costoTotal);
         printf("------------------------------------------\n");
-
     }
     if (zonaResidencia == 1) {
         double num = costoTotal;
@@ -170,7 +168,6 @@ void calcularConusmoLuz(int consumoKW, int zonaResidencia) {
         puts("");
     }
 
-
 }
 
 void facturaAgua() {
@@ -200,12 +197,10 @@ void facturaLuz() {
         printf("------------------------------------------\n");
         printf("Digite una opcion valida\n");
         printf("------------------------------------------\n");
+
     } else {
-        calcularConusmoLuz(consumoKW,zonaResidencial);
+        calcularConusmoLuz(consumoKW, zonaResidencial);
     }
-
-
-
 }
 
 int main() {
