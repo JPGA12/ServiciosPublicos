@@ -40,7 +40,7 @@ void calcularConsumoAgua(int consumoLitros, int zonaResidencia) {
         }
 
     }
-    printf("EL valor a pagar es: %d \n ", costoTotal);
+    printf("Total a pagar: %d \n ", costoTotal);
 }
 
 void facturaAgua() {
@@ -55,6 +55,16 @@ void facturaAgua() {
 
 
 }
+void facturaLuz(){
+    int consumoKW =0;
+    int zonaResidencial =0;
+    puts("INGRESE EL COSUMO MENSUAL EN KILOWATTS: ");
+    scanf("%i",&consumoKW);
+
+
+
+
+}
 
 int main() {
     int opc = 0;
@@ -64,8 +74,8 @@ int main() {
         if (opc == 1) {
             facturaAgua();
         } else if (opc == 2) {
+
         }
     } while (opc != 3);
     return 0;
-
 }
